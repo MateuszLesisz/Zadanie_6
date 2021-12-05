@@ -2,11 +2,11 @@ package com.infoshareacademy.domain;
 
 public class Book {
 
-    private final String author;
-    private final String title;
-    private final Category category;
-    private final int pages;
-    private final boolean forKids;
+    private String author;
+    private String title;
+    private Category category;
+    private int pages;
+    private boolean forKids;
 
     public Book(String author, String title, Category category, int pages, boolean forKids) {
         this.author = author;
@@ -14,6 +14,9 @@ public class Book {
         this.category = category;
         this.pages = pages;
         this.forKids = forKids;
+    }
+
+    public Book() {
     }
 
     public String getAuthor() {
