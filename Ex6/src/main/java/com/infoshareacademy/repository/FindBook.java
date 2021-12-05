@@ -14,7 +14,7 @@ import java.util.List;
 public class FindBook {
 
     @GetMapping("/book/{title}/search")
-    public List<Book> findBook(@PathVariable String title,
+    public List<Book> findTitleFromString(@PathVariable String title,
                                @RequestParam String author,
                                @RequestParam Category category,
                                @RequestParam int pages,
