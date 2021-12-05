@@ -3,13 +3,15 @@ package com.infoshareacademy.repository;
 import com.infoshareacademy.domain.Book;
 import com.infoshareacademy.domain.Category;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
-@RestController
+@Controller
 public class Books {
 
     private final List<Book> books;
@@ -18,13 +20,21 @@ public class Books {
         this.books = importBooks();
     }
 
-    @GetMapping("book-for-today")
-    public Book getBooks() {
-        Collections.shuffle(books, new Random());
-        return books.get(0);
+
+    public List<Book> getBooks() {
+        return books;
     }
 
     @GetMapping("books")
+    public List<Book> bookCase() {
+        return books;
+    }
+
+    @GetMapping("book-for-today")
+    public Book randomBook() {
+        Collections.shuffle(books, new Random());
+        return books.get(0);
+    }
     private static List<Book> importBooks() {
         List<Book> books = new ArrayList<>();
         books.add(new Book("Hanya Yanagihara", "Male zycie", Category.LITERATURA_PIEKNA, 816, false));
