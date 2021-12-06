@@ -11,16 +11,15 @@ public class FindBook {
 
     @GetMapping("/book/{title}/search")
     @ResponseBody
-    public List<String> findTitleFromString(@PathVariable String title) {
+    public List<Book> findTitleFromString(@PathVariable String title) {
         Books books = new Books();
-        List<String> newBookList = new ArrayList<>();
+        List<Book> newBookList = new ArrayList<>();
         for (Book book : books.getBooks()) {
-            for (String stringInTitle : books.booksTitle()) {
-                if(books.getBooks().contains("Hobbit")) {
-                    newBookList.add(stringInTitle);
+                if(book.getTitle().contains(title.toLowerCase())) {
+                    newBookList.add(book);
                 }
             }
-        }
         return newBookList;
+        }
+
     }
-}
