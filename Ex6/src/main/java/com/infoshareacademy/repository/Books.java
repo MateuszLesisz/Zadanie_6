@@ -2,13 +2,11 @@ package com.infoshareacademy.repository;
 
 import com.infoshareacademy.domain.Book;
 import com.infoshareacademy.domain.Category;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @RestController
 public class Books {
@@ -21,11 +19,6 @@ public class Books {
 
     public List<Book> getBooks() {
         return books;
-    }
-
-    public List<String> booksTitle() {
-        Book book = new Book();
-        return Collections.singletonList(book.getTitle());
     }
 
     private static List<Book> importBooks() {

@@ -16,9 +16,6 @@ public class Book {
         this.forKids = forKids;
     }
 
-    public Book() {
-    }
-
     public String getAuthor() {
         return author;
     }
