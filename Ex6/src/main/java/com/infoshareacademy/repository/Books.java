@@ -23,6 +23,10 @@ public class Books {
         return books;
     }
 
+    public List<String> booksTitle() {
+        Book book = new Book();
+        return Collections.singletonList(book.getTitle());
+    }
 
     private static List<Book> importBooks() {
         List<Book> books = new ArrayList<>();
