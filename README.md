@@ -1,4 +1,4 @@
-# Zadanie_6# Zadanie 6 - Spring Boot - kontroler, endpoint
+# Zadanie 6 - Spring Boot - kontroler, endpoint
 #### Zakres: Spring Web, kontroler, endpoint, adnotacje, Dependency Injection
 
 ### Zadanie "Domowa biblioteczka" :books:
